@@ -294,9 +294,11 @@ module Server =
         member this.PostAsync (value: 'S2C) =
             let msg = MessageCoder.ToJString jP value
             let bytes = System.Text.Encoding.UTF8.GetBytes(msg)
-            async{conn.send Opcode.Binary (bytes|> System.ArraySegment) true   } // |> Async.AwaitUnitTask
+            async{
+                do conn.send Opcode.Text (bytes|> System.ArraySegment) true  |>Async.RunSynchronously |>ignore
+                } // |> Async.AwaitUnitTask
             
-        member this.Post (value: 'S2C) = this.PostAsync value |> Async.Start
+        member this.Post (value: 'S2C) = this.PostAsync value |> Async.RunSynchronously
         member this.OnMessage = onMessage.Publish
         member this.OnClose = onClose.Publish
         member this.OnError = onError.Publish

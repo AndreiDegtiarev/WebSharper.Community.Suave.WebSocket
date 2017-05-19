@@ -93,15 +93,15 @@
  {
   function sequence(ios$1)
   {
-   var rest;
-   return ios$1.$==1?(rest=sequence(ios$1.$1),Observable.CombineLatest(ios$1.$0,rest,function($1,$2)
+   var xs,x,rest;
+   return ios$1.$==1?(xs=ios$1.$1,(x=ios$1.$0,(rest=sequence(xs),Observable.CombineLatest(x,rest,function($1,$2)
    {
     return new List.T({
      $:1,
      $0:$1,
      $1:$2
     });
-   })):Observable.Return(new List.T({
+   })))):Observable.Return(new List.T({
     $:0
    }));
   }
@@ -668,24 +668,19 @@
   },
   RemoveHandler$1:function(h)
   {
-   var a,o,p;
-   a=(o=this.Handlers,function(a$1)
-   {
-    o.RemoveAt(a$1);
-   });
-   (function(o$1)
-   {
-    if(o$1==null)
-     ;
-    else
-     a(o$1.$0);
-   }((p=function(y)
+   var x,p,a,o;
+   x=(p=function(y)
    {
     return Unchecked.Equals(h,y);
    },function(s)
    {
     return Seq.tryFindIndex(p,s);
-   }(this.Handlers))));
+   }(this.Handlers));
+   a=(o=this.Handlers,function(a$1)
+   {
+    o.RemoveAt(a$1);
+   });
+   x==null?void 0:a(x.$0);
   },
   AddHandler$1:function(h)
   {
@@ -722,24 +717,19 @@
  DelegateEvent$1=DelegateEvent.DelegateEvent=Runtime.Class({
   RemoveHandler$1:function(h)
   {
-   var a,o,p;
-   a=(o=this.Handlers,function(a$1)
-   {
-    o.RemoveAt(a$1);
-   });
-   (function(o$1)
-   {
-    if(o$1==null)
-     ;
-    else
-     a(o$1.$0);
-   }((p=function(y)
+   var x,p,a,o;
+   x=(p=function(y)
    {
     return Unchecked.Equals(h,y);
    },function(s)
    {
     return Seq.tryFindIndex(p,s);
-   }(this.Handlers))));
+   }(this.Handlers));
+   a=(o=this.Handlers,function(a$1)
+   {
+    o.RemoveAt(a$1);
+   });
+   x==null?void 0:a(x.$0);
   },
   AddHandler$1:function(h)
   {
@@ -836,12 +826,12 @@
   ev=Event$1.New(new List$1.New$2());
   Util.addListener(e,function(x)
   {
-   var m;
+   var m,old;
    m=buf[0];
-   (m!=null?m.$==1:false)?(buf[0]={
+   (m!=null?m.$==1:false)?(old=m.$0,buf[0]={
     $:1,
     $0:x
-   },ev.Trigger([m.$0,x])):buf[0]={
+   },ev.Trigger([old,x])):buf[0]={
     $:1,
     $0:x
    };
@@ -905,13 +895,15 @@
   },
   resume:function()
   {
-   var m;
+   var m,c;
    m=this.savedCont;
-   (m!=null?m.$==1:false)?(this.savedCont=null,this.startAsync(m.$0)):void 0;
+   (m!=null?m.$==1:false)?(c=m.$0,this.savedCont=null,this.startAsync(c)):void 0;
   },
   startAsync:function(a)
   {
-   Concurrency.Start(a,this.token);
+   var t;
+   t=this.token;
+   Concurrency.Start(a,t);
   },
   Scan:function(scanner,timeout)
   {
@@ -939,7 +931,7 @@
    timeout$1=Operators.DefaultArg(timeout,this.get_DefaultTimeout());
    return Concurrency.Delay(function()
    {
-    var m,m$1,found,a,m$2;
+    var m,m$1,found,found$1,a,m$2;
     m$1=$this.mailbox.n;
     found=null;
     while(!Unchecked.Equals(m$1,null))
@@ -948,13 +940,13 @@
       m$2==null?m$1=m$1.n:($this.mailbox.Remove$1(m$1),m$1=null,found=m$2);
      }
     m=found;
-    return(m!=null?m.$==1:false)?Concurrency.Bind(m.$0,function(a$1)
+    return(m!=null?m.$==1:false)?(found$1=m.$0,Concurrency.Bind(found$1,function(a$1)
     {
      return Concurrency.Return({
       $:1,
       $0:a$1
      });
-    }):(a=function(ok)
+    })):(a=function(ok)
     {
      var waiting,pending;
      if(timeout$1<0)
@@ -965,16 +957,16 @@
          $:1,
          $0:Concurrency.Delay(function()
          {
-          var m$3;
+          var m$3,c;
           m$3=scanner($this.mailbox.n.v);
-          return(m$3!=null?m$3.$==1:false)?($this.mailbox.RemoveFirst(),Concurrency.Bind(m$3.$0,function(a$1)
+          return(m$3!=null?m$3.$==1:false)?(c=m$3.$0,($this.mailbox.RemoveFirst(),Concurrency.Bind(c,function(a$1)
           {
            ok({
             $:1,
             $0:a$1
            });
            return Concurrency.Return(null);
-          })):(scanNext(),Concurrency.Return(null));
+          }))):(scanNext(),Concurrency.Return(null));
          })
         };
        }
@@ -988,15 +980,15 @@
          $:1,
          $0:Concurrency.Delay(function()
          {
-          var m$3;
+          var m$3,c;
           m$3=scanner($this.mailbox.n.v);
-          return(m$3!=null?m$3.$==1:false)?($this.mailbox.RemoveFirst(),Concurrency.Bind(m$3.$0,function(a$1)
+          return(m$3!=null?m$3.$==1:false)?(c=m$3.$0,($this.mailbox.RemoveFirst(),Concurrency.Bind(c,function(a$1)
           {
            return waiting[0]?(waiting[0]=false,Global.clearTimeout(pending),ok({
             $:1,
             $0:a$1
            }),Concurrency.Return(null)):Concurrency.Return(null);
-          })):(scanNext$1(),Concurrency.Return(null));
+          }))):(scanNext$1(),Concurrency.Return(null));
          })
         };
        }
@@ -1222,7 +1214,7 @@
  };
  MailboxProcessor.New=Runtime.Ctor(function(initial,token)
  {
-  var $this,m,v,callback;
+  var $this,m,ct,v,callback;
   $this=this;
   this.initial=initial;
   this.token=token;
@@ -1231,13 +1223,13 @@
   this.mailbox=new LinkedList.New();
   this.savedCont=null;
   m=this.token;
-  m==null?void 0:v=(callback=function()
+  m==null?void 0:(ct=m.$0,v=(callback=function()
   {
    return $this.resume();
-  },Concurrency.Register(m.$0,function()
+  },Concurrency.Register(ct,function()
   {
    callback();
-  }));
+  })));
   this.DefaultTimeout=-1;
  },MailboxProcessor);
 }());

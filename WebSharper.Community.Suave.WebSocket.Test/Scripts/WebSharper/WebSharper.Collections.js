@@ -196,7 +196,10 @@
   {
    return Seq.collect(function(m)
    {
-    return[Pair.New(m[0],m[1])];
+    var v,k;
+    v=m[1];
+    k=m[0];
+    return[Pair.New(k,v)];
    },Seq.distinctBy(function(t)
    {
     return t[0];
@@ -230,7 +233,7 @@
   },
   TryFind:function(k)
   {
-   var m,v;
+   var m,x,v;
    m=function(kv)
    {
     return kv.Value;
@@ -241,18 +244,12 @@
      $:1,
      $0:m(o.$0)
     };
-   }((v=Pair.New(k,void 0),function(t)
-   {
-    return BalancedTree.TryFind(v,t);
-   }(this.tree)));
+   }((x=this.tree,(v=Pair.New(k,void 0),BalancedTree.TryFind(v,x))));
   },
   Remove:function(k)
   {
-   var k$1;
-   return new FSharpMap.New$1((k$1=Pair.New(k,void 0),function(s)
-   {
-    return BalancedTree.Remove(k$1,s);
-   }(this.tree)));
+   var x,k$1;
+   return new FSharpMap.New$1((x=this.tree,(k$1=Pair.New(k,void 0),BalancedTree.Remove(k$1,x))));
   },
   get_Item:function(k)
   {
@@ -272,20 +269,15 @@
   },
   ContainsKey:function(k)
   {
-   var v;
+   var x,v;
+   x=this.tree;
    v=Pair.New(k,void 0);
-   return function(t)
-   {
-    return BalancedTree.Contains(v,t);
-   }(this.tree);
+   return BalancedTree.Contains(v,x);
   },
   Add:function(k,v)
   {
-   var x;
-   return new FSharpMap.New$1((x=Pair.New(k,v),function(t)
-   {
-    return BalancedTree.Add(x,t);
-   }(this.tree)));
+   var x,x$1;
+   return new FSharpMap.New$1((x=this.tree,(x$1=Pair.New(k,v),BalancedTree.Add(x$1,x))));
   },
   get_Tree:function()
   {
@@ -381,7 +373,7 @@
  };
  Map.Partition=function(f,m)
  {
-  var p,p$1,data,data$1;
+  var p,p$1,y,x;
   p=(p$1=function(kv)
   {
    return f(kv.Key,kv.Value);
@@ -389,7 +381,9 @@
   {
    return Arrays.partition(p$1,a);
   }(Arrays.ofSeq(BalancedTree.Enumerate(false,m.get_Tree()))));
-  return[new FSharpMap.New$1((data=p[0],BalancedTree.Build(data,0,data.length-1))),new FSharpMap.New$1((data$1=p[1],BalancedTree.Build(data$1,0,data$1.length-1)))];
+  y=p[1];
+  x=p[0];
+  return[new FSharpMap.New$1(BalancedTree.Build(x,0,x.length-1)),new FSharpMap.New$1(BalancedTree.Build(y,0,y.length-1))];
  };
  Map.OfArray=function(a)
  {
@@ -592,9 +586,11 @@
  },FSharpSet);
  Set.Partition=function(f,a)
  {
-  var p;
+  var p,y,x;
   p=Arrays.partition(f,Arrays.ofSeq(a));
-  return[new FSharpSet.New$1(BalancedTree.OfSeq(p[0])),new FSharpSet.New$1(BalancedTree.OfSeq(p[1]))];
+  y=p[1];
+  x=p[0];
+  return[new FSharpSet.New$1(BalancedTree.OfSeq(x)),new FSharpSet.New$1(BalancedTree.OfSeq(y))];
  };
  Set.FoldBack=function(f,a,s)
  {
@@ -1551,12 +1547,13 @@
    {
     return Seq.collect(function(m)
     {
-     var o;
+     var o,is;
      o=m[0];
+     is=m[1];
      return Seq.map(function(i)
      {
       return resultSelector(o,i);
-     },m[1]);
+     },is);
     },a);
    }));
   });
@@ -1629,7 +1626,10 @@
    }
    a=function(i,t$1)
    {
-    return Arrays.set(a$1,i,resultSelector(t$1[0],t$1[1]));
+    var o,is;
+    o=t$1[0];
+    is=t$1[1];
+    return Arrays.set(a$1,i,resultSelector(o,is));
    };
    (function(a$2)
    {

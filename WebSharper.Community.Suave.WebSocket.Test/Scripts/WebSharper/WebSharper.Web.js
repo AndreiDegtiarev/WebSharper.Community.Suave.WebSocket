@@ -252,10 +252,10 @@
   {
    return function(x)
    {
-    var o,tag,p,a$1;
-    return(typeof x==="object"?x!=null:false)?(o={},(tag=x.$,(p=Arrays.get(cases,tag),(Unchecked.Equals(typeof discr,"string")?o[discr]=p[0]:void 0,a$1=function(from,to,enc,kind)
+    var o,tag,p,tagName,fields,a$1;
+    return(typeof x==="object"?x!=null:false)?(o={},(tag=x.$,(p=Arrays.get(cases,tag),(tagName=p[0],(fields=p[1],(Unchecked.Equals(typeof discr,"string")?o[discr]=tagName:void 0,a$1=function(from,to,enc,kind)
     {
-     var record,k,m;
+     var record,k,m,x$1;
      if(from===null)
       {
        record=(enc(null))(x.$0);
@@ -273,7 +273,7 @@
        if(Unchecked.Equals(kind,1))
         {
          m=x[from];
-         m==null?void 0:o[to]=(enc(null))(m.$0);
+         m==null?void 0:(x$1=m.$0,o[to]=(enc(null))(x$1));
         }
        else
         Operators.FailWith("Invalid field option kind");
@@ -283,7 +283,7 @@
      {
       return a$1($1[0],$1[1],$1[2],$1[3]);
      },a$2);
-    }(p[1]),o)))):x;
+    }(fields),o)))))):x;
    };
   };
  };
@@ -297,14 +297,14 @@
     o={};
     a$1=function(name,enc,kind)
     {
-     var m;
+     var m,x$1;
      if(Unchecked.Equals(kind,0))
       o[name]=(enc(null))(x[name]);
      else
       if(Unchecked.Equals(kind,1))
        {
         m=x[name];
-        m==null?void 0:o[name]=(enc(null))(m.$0);
+        m==null?void 0:(x$1=m.$0,o[name]=(enc(null))(x$1));
        }
       else
        if(Unchecked.Equals(kind,2))

@@ -27,17 +27,18 @@
  Provider=Json&&Json.Provider;
  Client.Main=function(endpoint)
  {
-  var rvInput,submit,vReversed,a,a$1,a$2,a$3,a$4,a$5;
+  var rvInput,submit,vReversed,v,a,a$1,a$2,a$3,a$4,a$5;
   Client.WS(endpoint);
   rvInput=Var.Create$1("");
   submit=Submitter.CreateOption(rvInput.v);
-  vReversed=View.MapAsync(function(a$6)
+  vReversed=(v=submit.view,View.MapAsync(function(a$6)
   {
-   return(a$6!=null?a$6.$==1:false)?(new AjaxRemotingProvider.New()).Async("WebSharper.Community.Suave.WebSocket.Test:WebSharper.Community.Suave.WebSocket.Test.Server.DoSomething:-1287498065",[a$6.$0]):Concurrency.Delay(function()
+   var input;
+   return(a$6!=null?a$6.$==1:false)?(input=a$6.$0,(new AjaxRemotingProvider.New()).Async("WebSharper.Community.Suave.WebSocket.Test:WebSharper.Community.Suave.WebSocket.Test.Server.DoSomething:-1287498065",[input])):Concurrency.Delay(function()
    {
     return Concurrency.Return("");
    });
-  },submit.view);
+  },v));
   a=[Doc.Input([],rvInput),Doc.Button("Send",[],function()
   {
    submit.Trigger();
@@ -66,8 +67,8 @@
       {
        return Concurrency.Delay(function()
        {
-        var data,a$1,b;
-        return msg.$==3?(Global.console.log("Connection closed."),Concurrency.Return(state)):msg.$==2?(Global.console.log("WebSocket connection open."),Concurrency.Return(state)):msg.$==1?(Global.console.log("WebSocket connection error!"),Concurrency.Return(state)):(data=msg.$0,(a$1=data.$==0?(Global.console.log.apply(Global.console,[state].concat([data.$0])),Concurrency.Return(null)):(Global.console.log.apply(Global.console,[state].concat([data.$0])),Concurrency.Return(null)),(b=Concurrency.Delay(function()
+        var data,a$1,x$1,x$2,b;
+        return msg.$==3?(Global.console.log("Connection closed."),Concurrency.Return(state)):msg.$==2?(Global.console.log("WebSocket connection open."),Concurrency.Return(state)):msg.$==1?(Global.console.log("WebSocket connection error!"),Concurrency.Return(state)):(data=msg.$0,(a$1=data.$==0?(x$1=data.$0,(Global.console.log.apply(Global.console,[state].concat([x$1])),Concurrency.Return(null))):(x$2=data.$0,(Global.console.log.apply(Global.console,[state].concat([x$2])),Concurrency.Return(null))),(b=Concurrency.Delay(function()
         {
          return Concurrency.Return(state+1);
         }),Concurrency.Combine(a$1,b))));

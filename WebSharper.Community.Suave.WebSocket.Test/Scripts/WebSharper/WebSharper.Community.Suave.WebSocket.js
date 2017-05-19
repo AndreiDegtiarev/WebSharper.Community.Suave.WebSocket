@@ -65,12 +65,7 @@
  WebSocketServer=Client.WebSocketServer=Runtime.Class({
   Post:function(msg)
   {
-   var o;
-   o=this.conn;
-   (function(a)
-   {
-    o.send(a);
-   }(this.encode(msg)));
+   this.conn.send(this.encode(msg));
   },
   get_Connection:function()
   {
@@ -84,23 +79,26 @@
  },WebSocketServer);
  WithEncoding.Connect=function(encode,decode,endpoint,agent)
  {
-  var socket;
-  socket=new Global.WebSocket(endpoint.URI);
-  return WithEncoding.FromWebSocket(encode,decode,socket,agent,endpoint.JsonEncoding);
+  var socket,a,a$1;
+  socket=(a=endpoint.URI,new Global.WebSocket(a));
+  a$1=endpoint.JsonEncoding;
+  return WithEncoding.FromWebSocket(encode,decode,socket,agent,a$1);
  };
  WithEncoding.ConnectStateful=function(encode,decode,endpoint,agent)
  {
-  var socket;
-  socket=new Global.WebSocket(endpoint.URI);
-  return WithEncoding.FromWebSocketStateful(encode,decode,socket,agent,endpoint.JsonEncoding);
+  var socket,a,a$1;
+  socket=(a=endpoint.URI,new Global.WebSocket(a));
+  a$1=endpoint.JsonEncoding;
+  return WithEncoding.FromWebSocketStateful(encode,decode,socket,agent,a$1);
  };
  WithEncoding.FromWebSocket=function(encode,decode,socket,agent,jsonEncoding)
  {
-  var p,decode$1,flush,server;
+  var p,encode$1,decode$1,flush,server;
   p=Client.getEncoding(encode,decode,jsonEncoding);
+  encode$1=p[0];
   decode$1=p[1];
   flush=Client.cacheSocket(socket,decode$1);
-  server=new WebSocketServer.New(socket,p[0]);
+  server=new WebSocketServer.New(socket,encode$1);
   return Concurrency.Delay(function()
   {
    var x;
@@ -150,11 +148,12 @@
  };
  WithEncoding.FromWebSocketStateful=function(encode,decode,socket,agent,jsonEncoding)
  {
-  var p,decode$1,flush,server;
+  var p,encode$1,decode$1,flush,server;
   p=Client.getEncoding(encode,decode,jsonEncoding);
+  encode$1=p[0];
   decode$1=p[1];
   flush=Client.cacheSocket(socket,decode$1);
-  server=new WebSocketServer.New(socket,p[0]);
+  server=new WebSocketServer.New(socket,encode$1);
   return Concurrency.Delay(function()
   {
    var x,f;
@@ -225,7 +224,7 @@
  };
  Client.getEncoding=function(encode,decode,jsonEncoding)
  {
-  var p,f,decode$1;
+  var p,f,encode$1,decode$1;
   p=jsonEncoding.$==0?[function(a)
   {
    return Global.JSON.stringify(a);
@@ -236,8 +235,9 @@
   {
    return Json.Activate(f(x));
   })]:[encode,decode];
+  encode$1=p[0];
   decode$1=p[1];
-  return[p[0],function(msg)
+  return[encode$1,function(msg)
   {
    return decode$1(msg.data);
   }];

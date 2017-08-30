@@ -49,19 +49,15 @@
     </ItemGroup>
   </Target>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="HtmlAgilityPack">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\HtmlAgilityPack.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\HtmlAgilityPack.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="HtmlAgilityPack" />
     <Reference Include="HttpMultipartParser">
-      <HintPath>..\packages\Zafir.Owin.4.0.86.43-beta9\lib\net45\HttpMultipartParser.dll</HintPath>
+      <HintPath>..\packages\Zafir.Owin.4.0.91.48-beta10\lib\net45\HttpMultipartParser.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="HttpMultipartParser" />
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
@@ -115,88 +111,73 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebSharper.Collections">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Collections.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Collections" />
     <Reference Include="WebSharper.Control">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Control.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Control.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Control" />
     <Reference Include="WebSharper.Core">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Core.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Core" />
     <Reference Include="WebSharper.Core.JavaScript">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Core.JavaScript.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Core.JavaScript.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Core.JavaScript" />
     <Reference Include="WebSharper.InterfaceGenerator">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.InterfaceGenerator.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.InterfaceGenerator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.InterfaceGenerator" />
     <Reference Include="WebSharper.JavaScript">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.JavaScript.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.JavaScript.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.JavaScript" />
     <Reference Include="WebSharper.JQuery">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.JQuery.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.JQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.JQuery" />
     <Reference Include="WebSharper.Main">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Main.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Main.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Main" />
     <Reference Include="WebSharper.Owin">
-      <HintPath>..\packages\Zafir.Owin.4.0.86.43-beta9\lib\net45\WebSharper.Owin.dll</HintPath>
+      <HintPath>..\packages\Zafir.Owin.4.0.91.48-beta10\lib\net45\WebSharper.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Owin" />
     <Reference Include="WebSharper.Sitelets">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Sitelets.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Sitelets.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Sitelets" />
     <Reference Include="WebSharper.Suave">
-      <HintPath>..\packages\Zafir.Suave.4.0.98.51-beta9\lib\net45\WebSharper.Suave.dll</HintPath>
+      <HintPath>..\packages\Zafir.Suave.4.0.103.56-beta10\lib\net45\WebSharper.Suave.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Suave" />
     <Reference Include="WebSharper.UI.Next">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\WebSharper.UI.Next.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\WebSharper.UI.Next.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.UI.Next" />
     <Reference Include="WebSharper.UI.Next.CSharp">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\WebSharper.UI.Next.CSharp.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\WebSharper.UI.Next.CSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.UI.Next.CSharp" />
     <Reference Include="WebSharper.UI.Next.Templating">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\WebSharper.UI.Next.Templating.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\WebSharper.UI.Next.Templating.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.UI.Next.Templating" />
     <Reference Include="WebSharper.UI.Next.Templating.Common">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\WebSharper.UI.Next.Templating.Common.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\WebSharper.UI.Next.Templating.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.UI.Next.Templating.Runtime">
-      <HintPath>..\packages\Zafir.UI.Next.4.0.162.71-beta9\lib\net40\WebSharper.UI.Next.Templating.Runtime.dll</HintPath>
+      <HintPath>..\packages\Zafir.UI.Next.4.0.167.77-beta10\lib\net40\WebSharper.UI.Next.Templating.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Web">
-      <HintPath>..\packages\Zafir.4.0.181.82-beta9\lib\net40\WebSharper.Web.dll</HintPath>
+      <HintPath>..\packages\Zafir.4.0.187.90-beta10\lib\net40\WebSharper.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebSharper.Web" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebSharper.Community.Suave.WebSocket\WebSharper.Community.Suave.WebSocket.fsproj">
@@ -229,13 +210,13 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <Import Project="..\packages\Zafir.FSharp.4.0.181.82-beta9\build\Zafir.FSharp.targets" Condition="Exists('..\packages\Zafir.FSharp.4.0.181.82-beta9\build\Zafir.FSharp.targets')" />
+  <Import Project="..\packages\Zafir.FSharp.4.0.187.90-beta10\build\Zafir.FSharp.targets" Condition="Exists('..\packages\Zafir.FSharp.4.0.187.90-beta10\build\Zafir.FSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Zafir.FSharp.4.0.181.82-beta9\build\Zafir.FSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Zafir.FSharp.4.0.181.82-beta9\build\Zafir.FSharp.targets'))" />
-    <Error Condition="!Exists('..\packages\Zafir.UI.Next.4.0.162.71-beta9\build\Zafir.UI.Next.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Zafir.UI.Next.4.0.162.71-beta9\build\Zafir.UI.Next.targets'))" />
+    <Error Condition="!Exists('..\packages\Zafir.FSharp.4.0.187.90-beta10\build\Zafir.FSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Zafir.FSharp.4.0.187.90-beta10\build\Zafir.FSharp.targets'))" />
+    <Error Condition="!Exists('..\packages\Zafir.UI.Next.4.0.167.77-beta10\build\Zafir.UI.Next.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Zafir.UI.Next.4.0.167.77-beta10\build\Zafir.UI.Next.targets'))" />
   </Target>
-  <Import Project="..\packages\Zafir.UI.Next.4.0.162.71-beta9\build\Zafir.UI.Next.targets" Condition="Exists('..\packages\Zafir.UI.Next.4.0.162.71-beta9\build\Zafir.UI.Next.targets')" />
+  <Import Project="..\packages\Zafir.UI.Next.4.0.167.77-beta10\build\Zafir.UI.Next.targets" Condition="Exists('..\packages\Zafir.UI.Next.4.0.167.77-beta10\build\Zafir.UI.Next.targets')" />
 </Project>

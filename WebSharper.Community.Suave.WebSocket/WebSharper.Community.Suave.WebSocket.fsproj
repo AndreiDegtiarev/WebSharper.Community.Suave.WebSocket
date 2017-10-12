@@ -83,51 +83,51 @@
     </Reference>
     <Reference Include="System.ValueTuple" />
     <Reference Include="WebSharper.Collections">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Collections.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Collections.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Control">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Control.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Control.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Core">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Core.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Core.JavaScript">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Core.JavaScript.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Core.JavaScript.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.InterfaceGenerator">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.InterfaceGenerator.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.InterfaceGenerator.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.JavaScript">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.JavaScript.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.JavaScript.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.JQuery">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.JQuery.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.JQuery.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Main">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Main.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Main.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Sitelets">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Sitelets.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Sitelets.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebSharper.Web">
-      <HintPath>..\packages\WebSharper.4.0.192.106\lib\net40\WebSharper.Web.dll</HintPath>
+      <HintPath>..\packages\WebSharper.4.0.194.126\lib\net40\WebSharper.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <Import Project="..\packages\WebSharper.FSharp.4.0.192.106\build\WebSharper.FSharp.targets" Condition="Exists('..\packages\WebSharper.FSharp.4.0.192.106\build\WebSharper.FSharp.targets')" />
+  <Import Project="..\packages\WebSharper.FSharp.4.0.194.126\build\WebSharper.FSharp.targets" Condition="Exists('..\packages\WebSharper.FSharp.4.0.194.126\build\WebSharper.FSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\WebSharper.FSharp.4.0.192.106\build\WebSharper.FSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WebSharper.FSharp.4.0.192.106\build\WebSharper.FSharp.targets'))" />
+    <Error Condition="!Exists('..\packages\WebSharper.FSharp.4.0.194.126\build\WebSharper.FSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WebSharper.FSharp.4.0.194.126\build\WebSharper.FSharp.targets'))" />
   </Target>
 </Project>
